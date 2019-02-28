@@ -1,5 +1,5 @@
 from random import randint
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # our first function
@@ -29,3 +29,9 @@ def favourites_page(request):
     context = {'fave_links': ['https://www.reddit.com/', 'https://www.goodreads.com/', 'https://www.vice.com/en_ca']}
     reposnse = render(request, 'favourites.html', context)
     return HttpResponse(reposnse)
+
+def root(request):
+    return HttpResponseRedirect('home')
+
+def gallery_redirect(request):
+    return HttpResponseRedirect('../portfolio')
