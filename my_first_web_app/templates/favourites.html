@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Favourite Links</title>
+  </head>
+  <body>
+    <h1>My Fave Links</h1>
+    {% for link in fave_links %}
+      <p>Check out my favourite site: <a href= {{ link }}>fave site</a></p>
+    {% endfor %}
+  </body>
+</html>
