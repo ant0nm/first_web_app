@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import path
 
 # our first function
@@ -21,7 +22,8 @@ from django.urls import path
 # a client makes a request to our home URL
 # our function needs to take one argument representing the HTTP request
 def home_page(request):
-    return HttpResponse('Hi, this is the home page')
+    response = render(request, 'index.html')
+    return HttpResponse(response)
 
 urlpatterns = [
     path('home/', home_page)
